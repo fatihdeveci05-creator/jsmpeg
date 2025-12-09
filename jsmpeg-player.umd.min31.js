@@ -1258,7 +1258,7 @@
                 }
                 
                 if (this.audio && this.audio.canPlay && this.video) {
-                    var frameRate = this.video.frameRate || 25;
+                    var frameRate = this.video.frameRate || 24;
                     var frameTime = 1 / frameRate;
                     var targetBuf = this.options.targetAudioBuffer || 0.5;
                     
