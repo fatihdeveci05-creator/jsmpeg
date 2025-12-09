@@ -1252,7 +1252,7 @@
                     var targetBuf = this.options.targetAudioBuffer || 0.5;
                     var maxDrift = this.options.maxSyncDrift || 0.15;
                     var hardLimit = this.options.hardSyncLimit || 0.5;
-                    var frameRate = this.video.frameRate || 24;
+                    var frameRate = this.video.frameRate || 23;
                     var frameTime = 1 / frameRate;
                     var now = Q();
                     if (!this.lastUpdateTime) this.lastUpdateTime = now;
@@ -1288,7 +1288,7 @@
                     var targetBuf2 = this.options.targetAudioBuffer || 0.5;
                     while (this.audioOut.enqueuedTime < targetBuf2) { if (!this.audio.decode()) break; }
                 } else if (this.video) {
-                    var frameTime2 = 1 / (this.video.frameRate || 24);
+                    var frameTime2 = 1 / (this.video.frameRate || 23);
                     if (!this.lastVideoDecodeTime) this.lastVideoDecodeTime = Q();
                     var el = Q() - this.lastVideoDecodeTime;
                     if (el >= frameTime2) { this.video.decode(); this.lastVideoDecodeTime = Q(); }
@@ -1374,4 +1374,5 @@
         Base64ToArrayBuffer: r,
         WASM_BINARY_INLINED: b
     }
+
 }));
